@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: "Poppins", system-ui, sans-serif;
+  }
+  body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
