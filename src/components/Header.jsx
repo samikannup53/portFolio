@@ -26,7 +26,7 @@ export const Header = ({
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b-2 border-b-slate-800 rounded-b-[50px] shadow-2xl">
       <nav className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-5 2xl:py-6 flex items-center justify-between">
 
         {/* LEFT – Logo */}
