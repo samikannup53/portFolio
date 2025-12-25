@@ -1,87 +1,78 @@
+import { skillsData } from "../data/skills";
+
 export const Skills = () => {
   return (
-    <section className="bg-slate-950">
+    <div className="bg-slate-900">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-16 2xl:py-24">
-        <div className="">
-          {/* Section label */}
-          <span className="inline-block mb-4 text-sm font-medium tracking-wide text-teal-400">
-            Skills
-          </span>
+        {/* Section label */}
+        <span className="block mb-4 text-sm font-medium tracking-wide text-teal-400 sm:text-center">
+          Skills
+        </span>
 
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-100">
-            Tools & Technologies
-          </h2>
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight sm:text-center">
+          Tools & Technologies
+        </h2>
 
-          {/* Flex wrapper */}
-          <div className="mt-10 flex flex-wrap justify-between gap-6">
+        <div className="flex justify-center">
+          <span className="mt-8 h-px w-32 bg-gradient-to-r from-teal-400 to-transparent" />
+        </div>
+
+        {/* Cards */}
+        <div className="mt-10 flex flex-wrap justify-center 2xl:justify-between  gap-6">
+          {skillsData.map((group) => (
             <SkillCard
-              title="Frontend"
-              skills={[
-                { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-                { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-                { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-                { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-                { name: "Tailwind CSS", icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-              ]}
+              key={group.category}
+              title={group.category}
+              skills={group.skills}
             />
-
-            <SkillCard
-              title="Backend"
-              skills={[
-                { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-                { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-                { name: "REST APIs", icon: "https://img.icons8.com/ios-filled/50/api.png" },
-              ]}
-            />
-
-            <SkillCard
-              title="Database & Tools"
-              skills={[
-                { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-                { name: "SQL (Basics)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-                { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-                { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-                { name: "Postman", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
-              ]}
-            />
-          </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-/* ---------------- Skill Card (Flex-based) ---------------- */
-
-const SkillCard = ({ title, skills }) => {
+export const SkillCard = ({ title, skills }) => {
   return (
     <div
       className="
         flex flex-col
-        w-full sm:w-[48%] lg:w-[31%]
+        w-full sm:w-[48%] xl:w-[32%]
         rounded-xl border border-slate-800
-        bg-slate-900/50 p-6
-        hover:border-teal-500 transition-colors
+        bg-slate-950/20 p-6
+        transition-colors hover:border-teal-500
       "
     >
-      <h3 className="mb-4 text-lg font-semibold text-slate-100">
-        {title}
-      </h3>
+      <h3 className="mb-4 text-lg font-semibold">{title}</h3>
 
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-4">
         {skills.map((skill) => (
-          <li
-            key={skill.name}
-            className="flex items-center gap-3 text-slate-300"
-          >
-            <img
-              src={skill.icon}
-              alt={skill.name}
-              className="h-6 w-6"
-              loading="lazy"
-            />
-            <span>{skill.name}</span>
+          <li key={skill.name} className="space-y-2">
+            {/* Row */}
+            <div className="flex items-center gap-3 text-slate-300">
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className="h-6 w-6 shrink-0"
+                loading="lazy"
+              />
+
+              <span className="text-sm font-medium w-28">{skill.name}</span>
+              <div className="h-1 w-full rounded-full bg-slate-800 overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-teal-400 transition-all duration-500"
+                  style={{ width: `${skill.level}%` }}
+                />
+              </div>
+
+              {/* Percentage */}
+              <span className="ml-auto text-xs text-slate-400">
+                {skill.level}%
+              </span>
+            </div>
+
+            {/* Progress bar */}
           </li>
         ))}
       </ul>
