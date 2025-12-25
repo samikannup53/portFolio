@@ -60,7 +60,7 @@ export const Header = ({
             className="px-6 py-2.5 text-base font-medium rounded-md
                        bg-teal-500 text-white hover:bg-teal-400 transition-colors"
           >
-            Hire Me
+            Resume
           </button>
         </div>
 
@@ -93,7 +93,7 @@ export const Header = ({
               onClick={() => scrollTo(contactRef)}
               className="mt-5 px-5 py-2.5 rounded-md bg-teal-500 text-white hover:bg-teal-400 transition-colors"
             >
-              Hire Me
+              Resume
             </button>
           </ul>
         </div>
