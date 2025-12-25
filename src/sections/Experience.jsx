@@ -22,6 +22,12 @@ export const Experience = () => {
           <ExperienceCard key={exp.company} exp={exp} />
         ))}
       </div>
+
+      <div className="flex justify-center items-center">
+        <span className="h-0.5 w-32 bg-gradient-to-r from-transparent to-teal-300 rounded-full" />
+        <span className="mx-2 bg-teal-300 h-2.5 w-3 rounded-tr-md rounded-bl-md " />
+        <span className="h-0.5 w-32 bg-gradient-to-r from-teal-300 to-transparent rounded-full" />
+      </div>
     </div>
   );
 };
