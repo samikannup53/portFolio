@@ -32,11 +32,13 @@ const ExperienceCard = ({ exp }) => {
       to={exp.website}
       target="_blank"
       rel="noopener noreferrer"
-      className=" block mt-10 rounded-xl border border-slate-800 bg-slate-950/50 p-6 transition-colors hover:border-teal-500 "
+      className="
+        block mt-10 rounded-xl border border-slate-800 bg-slate-950/50 p-6 transition-colors hover:border-teal-500
+      "
     >
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-        <div className="flex items-center gap-3">
+        <div className="flex items-start sm:items-center gap-3">
           {/* Logo */}
           <span className="flex items-center justify-center">
             <img
@@ -50,7 +52,7 @@ const ExperienceCard = ({ exp }) => {
           <div>
             <h3 className="text-lg font-semibold">{exp.role}</h3>
             <p className="mt-1 text-sm text-slate-400">
-              {exp.company} · {exp.role}
+              {exp.company} · {exp.location}
             </p>
           </div>
         </div>
