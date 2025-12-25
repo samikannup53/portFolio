@@ -2,7 +2,7 @@ import { Code2, GraduationCap, BriefcaseBusiness } from "lucide-react";
 
 export const About = () => {
   return (
-    <div className="bg-slate-900 overflow-hidden">
+    <div className=" bg-slate-900/50 overflow-hidden">
       <div className="relative max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* LEFT – Heading */}
@@ -11,7 +11,7 @@ export const About = () => {
               About Me
             </span>
 
-            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-semibold tracking-tight text-slate-100 leading-tight">
               Building products with{" "}
               <span className="text-teal-400">Code & Clarity</span>
             </h2>
@@ -24,8 +24,10 @@ export const About = () => {
             {/* Block 1 */}
             <div className="group flex gap-5 items-start">
               <span className="relative shrink-0">
+                {/* halo */}
                 <span className="absolute inset-0 -z-10 rounded-full scale-125 opacity-0 bg-gradient-to-br from-teal-400/30 to-cyan-400/30 transition-all duration-300 group-hover:opacity-100 group-hover:scale-150" />
 
+                {/* icon */}
                 <span className="flex items-center justify-center rounded-full p-3 bg-gradient-to-br from-teal-500/20 to-cyan-400/20 transition-colors duration-300 group-hover:from-teal-500/40 group-hover:to-cyan-400/40">
                   <Code2 className="h-5 w-5 text-teal-400" />
                 </span>
@@ -43,7 +45,7 @@ export const About = () => {
             {/* Block 2 */}
             <div className="group flex gap-5 items-start">
               <span className="relative shrink-0">
-                <span className="absolute inset-0 -z-10 rounded-full scale-125 opacity-0 bg-gradient-to-br from-indigo-400/30 to-purple-400/30 transition-all duration-300 group-hover:opacity-100 group-hover:scale-150" />
+                <span className="absolute inset-0 -z-10 rounded-full scale-125 opacity-0 bg-gradient-to-br from-indigo-400/30 to-purple-400/30 transition-all duration-300  group-hover:opacity-100 group-hover:scale-150" />
 
                 <span className="flex items-center justify-center rounded-full p-3 bg-gradient-to-br from-indigo-500/20 to-purple-400/20 transition-colors duration-300 group-hover:from-indigo-500/40 group-hover:to-purple-400/40">
                   <BriefcaseBusiness className="h-5 w-5 text-indigo-400" />
