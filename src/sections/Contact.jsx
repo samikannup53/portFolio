@@ -8,7 +8,7 @@ export const Contact = () => {
 
       
         {/* Wrapper */}
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 items-start justify-between">
           
           {/* LEFT – Content */}
           <div className="w-full lg:w-1/2 max-w-xl">
