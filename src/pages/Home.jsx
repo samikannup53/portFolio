@@ -29,7 +29,7 @@ export const Home = () => {
       />
 
       <main>        
-        <section ref={homeRef} className="scroll-mt-22"><Hero /></section>
+        <section ref={homeRef} className="scroll-mt-22"><Hero projectsRef={projectsRef} contactRef={contactRef}/></section>
         <section ref={aboutRef} className="scroll-mt-14"><About /></section>
         <section ref={skillsRef} className="scroll-mt-14"><Skills /></section>
         <section ref={projectsRef} className="scroll-mt-14"><Projects /></section>

@@ -1,6 +1,10 @@
 import ProfileImage from "../assets/ProfileImage.png";
 
-export const Hero = () => {
+export const Hero = ({ projectsRef, contactRef }) => {
+  const scrollTo = (ref) => {
+    ref?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative overflow-hidden">
       {/* Subtle background glitters */}
@@ -27,22 +31,22 @@ export const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a
-                href="/"
+              <button
+                onClick={() => scrollTo(projectsRef)}
                 className="w-full sm:w-auto px-7 py-3 text-base font-medium rounded-md
-                           bg-teal-500 text-white hover:bg-teal-400 transition-colors"
+                           bg-teal-500 text-white hover:bg-teal-400 transition-colors cursor-pointer"
               >
                 View Projects
-              </a>
+              </button>
 
-              <a
-                href="/"
+              <button
+                onClick={() => scrollTo(contactRef)}
                 className="w-full sm:w-auto px-7 py-3 text-base font-medium rounded-md
                            border border-slate-700 text-slate-200
-                           hover:border-teal-400 hover:text-teal-400 transition-colors"
+                           hover:border-teal-400 hover:text-teal-400 transition-colors cursor-pointer"
               >
                 Contact Me
-              </a>
+              </button>
             </div>
           </div>
 
