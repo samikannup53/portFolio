@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { LINKS } from "../data/links";
 
 export const Header = ({
   homeRef,
@@ -28,13 +30,12 @@ export const Header = ({
   return (
     <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b-2 border-b-slate-800 rounded-b-[50px] shadow-2xl">
       <nav className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-5 2xl:py-6 flex items-center justify-between">
-
         {/* LEFT – Logo */}
         <h1
           onClick={() => scrollTo(homeRef)}
           className="text-3xl font-semibold tracking-tight cursor-pointer text-slate-100"
         >
-          Sam
+          Sami
         </h1>
 
         {/* CENTER – Nav (Desktop) */}
@@ -55,13 +56,14 @@ export const Header = ({
 
         {/* RIGHT – CTA (Desktop) */}
         <div className="hidden lg:block">
-          <button
-            onClick={() => scrollTo(contactRef)}
-            className="px-6 py-2.5 text-base font-medium rounded-md
-                       bg-teal-500 text-white hover:bg-teal-400 transition-colors"
+          <Link
+            to={LINKS.RESUME}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 px-5 py-2.5 rounded-md bg-teal-500 text-white hover:bg-teal-400 transition-colors"
           >
             Resume
-          </button>
+          </Link>
         </div>
 
         {/* MOBILE MENU BUTTON */}
@@ -89,12 +91,14 @@ export const Header = ({
             ))}
 
             {/* Mobile CTA */}
-            <button
-              onClick={() => scrollTo(contactRef)}
+            <Link
+              to={LINKS.RESUME}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-5 px-5 py-2.5 rounded-md bg-teal-500 text-white hover:bg-teal-400 transition-colors"
             >
               Resume
-            </button>
+            </Link>
           </ul>
         </div>
       )}

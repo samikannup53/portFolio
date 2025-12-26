@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import { Mail, Linkedin, Github, ArrowUpRight, FileText } from "lucide-react";
+import { LINKS } from "../data/links";
 
 export const Contact = () => {
   return (
     <section className="bg-slate-900/50 overflow-hidden">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-8 xl:py-28 2xl:py-32">
-
-      
         {/* Wrapper */}
         <div className="flex flex-col lg:flex-row gap-12 items-start justify-between">
-          
           {/* LEFT – Content */}
           <div className="w-full lg:w-1/2 max-w-xl">
             <span className="inline-block mb-4 text-sm font-medium tracking-wide text-teal-400">
@@ -32,14 +30,14 @@ export const Contact = () => {
           {/* RIGHT – Contact cards */}
           <div className="w-full lg:w-1/2 flex flex-wrap gap-6">
             <ContactCard
-              href="mailto:samikannup53@gmail.com"
+              to={LINKS.EMAILTO}
               icon={Mail}
               title="Email"
-              value="samikannu.dev@gmail.com"
+              value={LINKS.EMAIL}
             />
 
             <ContactCard
-              href="https://www.linkedin.com/in/samikannup53/"
+              to={LINKS.LINKEDIN}
               icon={Linkedin}
               title="LinkedIn"
               value="Connect with me"
@@ -47,7 +45,7 @@ export const Contact = () => {
             />
 
             <ContactCard
-              href="https://github.com/samikannup53"
+              to={LINKS.GITHUB}
               icon={Github}
               title="GitHub"
               value="View my work"
@@ -55,7 +53,7 @@ export const Contact = () => {
             />
 
             <ContactCard
-              href="/resume.pdf"
+              to={LINKS.RESUME}
               icon={FileText}
               title="Resume"
               value="Download PDF"
@@ -72,10 +70,10 @@ export const Contact = () => {
 /* Contact Card                                                               */
 /* -------------------------------------------------------------------------- */
 
-const ContactCard = ({ icon: Icon, title, value, href, external }) => {
+const ContactCard = ({ icon: Icon, title, value, to, external }) => {
   return (
     <Link
-      to={href}
+      to={to}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
       className="
@@ -101,14 +99,10 @@ const ContactCard = ({ icon: Icon, title, value, href, external }) => {
 
         {/* Text */}
         <div>
-          <p className="text-sm font-medium text-slate-200">
-            {title}
-          </p>
+          <p className="text-sm font-medium text-slate-200">{title}</p>
           <p className="text-sm text-slate-400 flex items-center gap-1">
             {value}
-            {external && (
-              <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
-            )}
+            {external && <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />}
           </p>
         </div>
       </div>
