@@ -1,7 +1,8 @@
 import FlytixBanner from "../assets/FlytixBanner.png";
-import KanbanBanner from "../assets/FlytixBanner.png";
+import KanbanBanner from "../assets/KanbanBanner.png";
+import NotesApkBanner from "../assets/NotesApkBanner.png";
 import MovieScapeBanner from "../assets/MoviscapBanner.png";
-import AuthFlowBanner from "../assets/FlytixBanner.png";
+import AuthFlowBanner from "../assets/AuthFlowBanner.png";
 import KiTechnBanner from "../assets/KitechnpiBanner.png";
 
 export const projectsData = [
@@ -15,14 +16,7 @@ export const projectsData = [
       "Flight ticket booking platform with real-time search and secure payments.",
 
     description:
-      "FlyTix is a full-stack MERN flight booking system that allows users to search flights, choose trip types, complete secure payments using Razorpay, and receive booking confirmations via email.",
-
-    highlights: [
-      "Flight search with trip type selection",
-      "Razorpay payment integration",
-      "Email notifications using Nodemailer",
-      "Responsive UI with Tailwind CSS",
-    ],
+      "FlyTix is a modern flight booking system that enables users to search, compare, and reserve flights with real-time updates and secure payments. Designed with a clean UI, efficient backend, and Razorpay integration, it's perfect for learning and demonstrating full-stack web development using React, Node.js, Express, MongoDB, and Tailwind CSS.",
 
     tech: [
       "React",
@@ -35,7 +29,8 @@ export const projectsData = [
     ],
 
     liveLink: "https://flytix.netlify.app",
-    githubLink: "https://github.com/samikannup53/FlyTix-Frontend",
+    githubLinkFrontend: "https://github.com/samikannup53/FlyTix-Frontend",
+    githubLinkBackend: "https://github.com/samikannup53/FlyTix-Backend",
   },
 
   {
@@ -48,18 +43,30 @@ export const projectsData = [
       "Task management app with a clean UI and workflow-based task organization.",
 
     description:
-      "A Kanban-style task management application that helps users organize work across different stages using a clean and intuitive interface.",
-
-    highlights: [
-      "Column-based task organization",
-      "Responsive layout",
-      "Reusable React components",
-    ],
+      "A Kanban-style task management app built with React JS and TailwindCSS. Easily create, organize, and move tasks across columns like To Do, In Progress, and Done, with drag-and-drop support and local persistence.",
 
     tech: ["React", "Tailwind CSS"],
 
-    liveLink: "",
+    liveLink: "https://sami-kanbanboard.netlify.app/",
     githubLink: "https://github.com/samikannup53/kanbanBOARD",
+  },
+
+  {
+    id: "notesapk",
+    title: "notesAPK",
+    type: "Frontend Application",
+    banner: NotesApkBanner,
+
+    shortDescription:
+      "Lightweight notes app built with React, featuring local storage and a clean, minimal UI.",
+
+    description:
+      "notesAPK is a lightweight notes management application built using React and Tailwind CSS. It allows users to create, edit, pin, archive, search, and organize notes using tags, with all data stored locally in the browser using localStorage for a fast and offline-friendly experience.",
+
+    tech: ["React", "Tailwind CSS"],
+
+    liveLink: "https://sami-notesapk.netlify.app/",
+    githubLink: "https://github.com/samikannup53/notesAPK.git",
   },
 
   {
@@ -68,20 +75,14 @@ export const projectsData = [
     type: "Frontend Application",
     banner: MovieScapeBanner,
 
-    shortDescription: "Movie search application powered by an external API.",
+    shortDescription: "Movie search application powered by an OMDB API.",
 
     description:
-      "movieSCAPE allows users to search for movies and view details using the OMDB API with a simple and responsive interface.",
-
-    highlights: [
-      "OMDB API integration",
-      "Search & detail views",
-      "Clean UI with React",
-    ],
+      "A Full Featured Movie Search Application using React that Integrates with OMDB API & Allow users to Search and View Details about Movie and Manage Favourite Lists.",
 
     tech: ["React", "OMDB API", "Tailwind CSS"],
 
-    liveLink: "",
+    liveLink: "https://sami-moviescape.netlify.app/",
     githubLink: "https://github.com/samikannup53/movieSCAPE",
   },
 
@@ -94,17 +95,11 @@ export const projectsData = [
     shortDescription: "Reusable authentication system with JWT-based security.",
 
     description:
-      "AuthFlow is a backend authentication template built with Node.js and Express, featuring JWT-based authentication and secure API access.",
-
-    highlights: [
-      "JWT authentication",
-      "Protected routes",
-      "Scalable backend structure",
-    ],
+      "AuthFlow is a secure, server-rendered Node.js application that handles user authentication and authorization using Bearer tokens (JWT). Built with the MVC architecture and EJS templating, it supports user registration, login, logout, and protected pages with personalized content. Ideal for learning or demonstrating token-based authentication in server-side rendered apps using Express, Mongoose, and JWT.",
 
     tech: ["Node.js", "Express", "MongoDB", "JWT"],
 
-    liveLink: "",
+    liveLink: "https://myauthflow.onrender.com/",
     githubLink: "https://github.com/samikannup53/AuthFlow",
   },
 
@@ -117,17 +112,11 @@ export const projectsData = [
     shortDescription: "CRUD-based REST API for managing recipes.",
 
     description:
-      "KiTechn API is a RESTful backend service that supports full CRUD operations for recipe management, designed with clean architecture principles.",
-
-    highlights: [
-      "RESTful CRUD APIs",
-      "MongoDB integration",
-      "Postman-tested endpoints",
-    ],
+      "KiTechnAPI is a simple and clean CRUD application designed to manage recipes efficiently. Built with Node.js, Express, and Mongoose (MongoDB) and It follows the MVC architecture and Uses Postman for API testing and documentation and Tailwind for UI.",
 
     tech: ["Node.js", "Express", "MongoDB"],
 
-    liveLink: "",
+    liveLink: "https://kitechnapi.onrender.com/",
     githubLink: "https://github.com/samikannup53/KiTechnAPI",
   },
 ];

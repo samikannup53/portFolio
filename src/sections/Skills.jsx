@@ -3,7 +3,7 @@ import { skillsData } from "../data/skills";
 export const Skills = () => {
   return (
     <div className="bg-slate-900/50">
-      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-14">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-14 2xl:py-16">
         {/* Section label */}
         <span className="block mb-4 text-sm font-medium tracking-wide text-teal-400 sm:text-center">
           Skills

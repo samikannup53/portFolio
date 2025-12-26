@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className=" border-t border-slate-800">
@@ -8,23 +10,23 @@ export const Footer = () => {
 
           {/* Right */}
           <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/samikannup53"
+            <Link
+              to="https://github.com/samikannup53"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition-colors"
             >
               GitHub
-            </a>
+            </Link>
 
-            <a
-              href="https://www.linkedin.com/in/samikannup53/"
+            <Link
+              to="https://www.linkedin.com/in/samikannup53/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition-colors"
             >
               LinkedIn
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { projectsData } from "../data/projects";
+import { Link } from "react-router-dom";
 
 export const Projects = () => {
   const swiperRef = useRef(null);
@@ -19,7 +20,7 @@ export const Projects = () => {
 
   return (
     <section className="bg-slate-900/50 overflow-hidden">
-      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-14 ">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-14 2xl:py-16">
         {/* Section label */}
         <span className="block mb-4 text-sm font-medium tracking-wide text-teal-400 sm:text-center">
           Projects
@@ -39,13 +40,13 @@ export const Projects = () => {
             modules={[Autoplay]}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             loop
-            autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+            autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
             spaceBetween={24}
             breakpoints={{
               0: { slidesPerView: 1 },
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
-              1440: { slidesPerView: 4 },
+              1280: { slidesPerView: 4 },
             }}
             speed={900}
           >
@@ -132,7 +133,16 @@ const ProjectModal = ({ project, onClose }) => {
 
   if (!project) return null;
 
-  const { title, banner, description, tech, liveLink, githubLink } = project;
+  const {
+    title,
+    banner,
+    description,
+    tech,
+    liveLink,
+    githubLinkFrontend,
+    githubLinkBackend,
+    githubLink,
+  } = project;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
@@ -143,9 +153,9 @@ const ProjectModal = ({ project, onClose }) => {
       />
 
       {/* Modal */}
-      <div className="relative z-10 w-full max-w-5xl 2xl:max-w-7xl  overflow-hidden rounded-2xl bg-slate-900 shadow-2xl border border-slate-800 max-h-[80vh] 2xl:max-h-[75vh] flex flex-col">
+      <div className="relative z-10 w-full max-w-5xl 2xl:max-w-7xl   rounded-2xl bg-slate-900 shadow-2xl border border-slate-800 max-h-[80vh] 2xl:max-h-[75vh] flex flex-col">
         {/* Banner */}
-        <div className="relative h-55 2xl:h-65 shrink-0">
+        <div className="relative h-55 2xl:h-65 shrink-0 overflow-hidden rounded-t-2xl">
           <img
             src={banner}
             alt={title}
@@ -155,16 +165,12 @@ const ProjectModal = ({ project, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-8">
+        <div className="flex-1 overflow-y-auto p-6 sm:p-8 overflow-hidden">
           {/* Title */}
-          <h3 className="text-2xl  font-semibold text-slate-100">
-            {title}
-          </h3>
+          <h3 className="text-2xl  font-semibold text-slate-100">{title}</h3>
 
           {/* Description */}
-          <p className="mt-4 text-slate-400 leading-relaxed ">
-            {description}
-          </p>
+          <p className="mt-4 text-slate-400 leading-relaxed ">{description}</p>
 
           {/* Tech Stack */}
           <div className="mt-8">
@@ -177,7 +183,7 @@ const ProjectModal = ({ project, onClose }) => {
               {tech.map((item) => (
                 <div
                   key={item.name || item}
-                  className="flex items-center gap-2 rounded-lg bg-slate-800/70 px-3 py-2 text-xs text-slate-300 border border-slate-700"
+                  className="flex items-center gap-2 rounded-sm bg-slate-800/70 px-3 py-1 text-xs text-slate-300 border border-slate-700"
                 >
                   {item.icon && (
                     <img
@@ -193,29 +199,53 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
 
           {/* Actions */}
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap gap-4">
             {liveLink && (
-              <a
-                href={liveLink}
+              <Link
+                to={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-teal-500/90 px-5 py-2.5 text-sm font-medium text-slate-900 hover:bg-teal-400 transition"
               >
                 <ExternalLink size={16} />
                 Live Demo
-              </a>
+              </Link>
+            )}
+
+            {githubLinkFrontend && (
+              <Link
+                to={githubLinkFrontend}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-200 hover:border-teal-400 hover:text-teal-400 transition"
+              >
+                <Github size={16} />
+                Frontend Code
+              </Link>
+            )}
+
+            {githubLinkBackend && (
+              <Link
+                to={githubLinkBackend}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-200 hover:border-teal-400 hover:text-teal-400 transition"
+              >
+                <Github size={16} />
+                Backend Code
+              </Link>
             )}
 
             {githubLink && (
-              <a
-                href={githubLink}
+              <Link
+                to={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-200 hover:border-teal-400 hover:text-teal-400 transition"
               >
                 <Github size={16} />
                 View Code
-              </a>
+              </Link>
             )}
           </div>
         </div>
@@ -223,9 +253,9 @@ const ProjectModal = ({ project, onClose }) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 rounded-full p-2 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white transition cursor-pointer"
+          className="absolute -top-12 right-0 rounded-full p-2 bg-slate-800 text-slate-200 hover:text-white hover:bg-slate-900 transition-colors  cursor-pointer"
         >
-          <X size={18} />
+          <X size={20} />
         </button>
       </div>
     </div>
