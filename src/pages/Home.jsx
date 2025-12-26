@@ -29,12 +29,12 @@ export const Home = () => {
       />
 
       <main>        
-        <section ref={homeRef}><Hero /></section>
-        <section ref={aboutRef}><About /></section>
-        <section ref={skillsRef}><Skills /></section>
-        <section ref={projectsRef}><Projects /></section>
-        <section ref={experienceRef}><Experience /></section>
-        <section ref={contactRef}><Contact /></section>
+        <section ref={homeRef} className="scroll-mt-22"><Hero /></section>
+        <section ref={aboutRef} className="scroll-mt-14"><About /></section>
+        <section ref={skillsRef} className="scroll-mt-14"><Skills /></section>
+        <section ref={projectsRef} className="scroll-mt-14"><Projects /></section>
+        <section ref={experienceRef} className="scroll-mt-14"><Experience /></section>
+        <section ref={contactRef} className="scroll-mt-14"><Contact /></section>
       </main>
 
       <Footer />
