@@ -9,7 +9,7 @@ export const Hero = () => {
         <span className="absolute top-1/6 right-1/5 w-40 h-40 bg-white/20 rounded-full blur-2xl" />
       </div>
 
-      <div className="relative max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-14 sm:py-16 xl:py-10 2xl:py-24">
+      <div className="relative max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-14 sm:py-16 xl:py-10 2xl:py-26">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-center">
           {/* LEFT – Text */}
           <div className="max-w-xl lg:max-w-3xl xl:max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
