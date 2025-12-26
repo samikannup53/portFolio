@@ -19,7 +19,7 @@ export const Projects = () => {
 
   return (
     <section className="bg-slate-900/50 overflow-hidden">
-      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-16 ">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 py-14 ">
         {/* Section label */}
         <span className="block mb-4 text-sm font-medium tracking-wide text-teal-400 sm:text-center">
           Projects
@@ -34,7 +34,7 @@ export const Projects = () => {
           <span className="mt-8 h-px w-32 bg-gradient-to-r from-teal-400 to-transparent" />
         </div>
 
-        <div className="mt-20">
+        <div className="mt-12">
           <Swiper
             modules={[Autoplay]}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
